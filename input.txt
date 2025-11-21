@@ -1,0 +1,10 @@
+MBL001 Toyota Avanza SUV 350000
+MBL002 Honda City Sedan 300000
+MBL003 Daihatsu Terios SUV 320000
+MBL004 Suzuki APV MPV 280000
+MBL005 Mitsubishi Pajero SUV 400000
+MBL006 Toyota Kijang Innova MPV 380000
+MBL007 Nissan Grand Livina MPV 300000
+MBL008 Honda Accord Sedan 450000
+MBL009 Toyota Camry Sedan 500000
+MBL010 Hino Dutro Truck 550000
