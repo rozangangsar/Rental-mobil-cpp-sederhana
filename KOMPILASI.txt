@@ -1,0 +1,182 @@
+================================================================================
+INSTRUKSI KOMPILASI DAN EKSEKUSI APLIKASI RENTAL MOBIL
+================================================================================
+
+PERSYARATAN:
+- Compiler: g++ (GNU C++ Compiler)
+- Standard: C++11 atau lebih baru
+- OS: Windows (dengan MinGW), Linux, atau macOS
+
+================================================================================
+OPSI 1: MENGGUNAKAN MAKEFILE (LINUX/MACOS)
+================================================================================
+
+1. Buka terminal dan navigasi ke folder proyek:
+   $ cd ProgdasUAS
+
+2. Kompilasi program:
+   $ make
+
+   Atau jika ingin langsung menjalankan:
+   $ make run
+
+3. Untuk membersihkan file hasil kompilasi:
+   $ make clean
+
+4. Untuk rebuild (bersih + kompilasi):
+   $ make rebuild
+
+================================================================================
+OPSI 2: KOMPILASI MANUAL DENGAN G++ (SEMUA OS)
+================================================================================
+
+1. Buka terminal/command prompt dan navigasi ke folder proyek:
+   $ cd ProgdasUAS
+
+2. Kompilasi semua file:
+   $ g++ -std=c++11 -o rental main.cpp Car.cpp Renter.cpp RentalManager.cpp
+
+   Catatan:
+   - Flag -std=c++11 menggunakan standard C++11
+   - Flag -o rental menentukan nama executable sebagai "rental"
+
+3. Menjalankan aplikasi:
+
+   Linux/macOS:
+   $ ./rental
+
+   Windows (Command Prompt):
+   $ rental.exe
+
+   Windows (PowerShell):
+   $ .\rental.exe
+
+4. Untuk kompilasi dengan output lebih verbose:
+   $ g++ -std=c++11 -Wall -Wextra -o rental main.cpp Car.cpp Renter.cpp RentalManager.cpp
+
+================================================================================
+OPSI 3: MENGGUNAKAN IDE
+================================================================================
+
+A. CODE::BLOCKS:
+   1. File -> New -> Project -> C++
+   2. Pilih "Empty project"
+   3. Tentukan lokasi proyek
+   4. Project -> Add files to project
+   5. Pilih semua file .cpp dan .h
+   6. Build menu -> Build (atau Ctrl+F9)
+   7. Build menu -> Run (atau Ctrl+F10)
+
+B. DEV-C++:
+   1. File -> New -> Project
+   2. Pilih "Empty Project"
+   3. Project -> Add to Project
+   4. Tambahkan semua file .cpp
+   5. Build -> Compile (atau Ctrl+F9)
+   6. Build -> Run (atau Ctrl+F10)
+
+C. VISUAL STUDIO CODE:
+   1. Install C++ extension
+   2. Install compiler (MinGW untuk Windows, gcc untuk Linux)
+   3. Buat atau edit file .vscode/tasks.json dengan task compile
+   4. Gunakan Terminal -> Run Build Task
+   5. Jalankan dengan Debug -> Start Debugging
+
+D. VISUAL STUDIO COMMUNITY:
+   1. File -> New -> Project -> C++ Console App
+   2. Tambahkan semua file .cpp ke Source Files
+   3. Tambahkan semua file .h ke Header Files
+   4. Build -> Build Solution
+   5. Debug -> Start Debugging
+
+================================================================================
+TESTING PROGRAM
+================================================================================
+
+Setelah kompilasi berhasil, program dapat ditest dengan langkah-langkah:
+
+1. Jalankan program: ./rental (atau rental.exe di Windows)
+
+2. Pada menu utama, pilih:
+   - Menu 1: Kelola Data Mobil
+   - Menu 5: Muat Data dari File
+
+   Pilih opsi "Muat Data dari File" untuk membaca data dari input.txt
+
+3. Lakukan beberapa transaksi:
+   - Tambah mobil baru
+   - Daftar penyewa
+   - Sewa mobil
+   - Kembalikan mobil
+
+4. Pilih Menu 6: Simpan Data ke File
+   untuk menyimpan hasil perubahan ke output.txt
+
+5. Pilih Menu 0: Keluar untuk menutup aplikasi
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+1. Error: "command not found: g++"
+   Solusi: Install MinGW (Windows), GCC (Linux), atau Xcode Command Line Tools (macOS)
+
+2. Error: "cannot find -lstdc++"
+   Solusi: Pastikan g++ terinstall dengan benar. Di Windows, reinstall MinGW.
+
+3. Error: "undefined reference to ..."
+   Solusi: Pastikan semua file .cpp dikompilasi bersama. Gunakan:
+   $ g++ -std=c++11 -o rental main.cpp Car.cpp Renter.cpp RentalManager.cpp
+
+4. File input.txt tidak ditemukan:
+   Solusi: Pastikan input.txt berada di direktori yang sama saat menjalankan program
+
+5. Error saat load data:
+   Solusi: Cek format file input.txt harus: ID Model Tipe Tarif (dipisah spasi)
+
+================================================================================
+STRUKTUR FILE YANG DIPERLUKAN
+================================================================================
+
+Pastikan folder proyek memiliki struktur:
+
+ProgdasUAS/
+├── Car.h
+├── Car.cpp
+├── Renter.h
+├── Renter.cpp
+├── RentalManager.h
+├── RentalManager.cpp
+├── main.cpp
+├── input.txt           (opsional, untuk testing load data)
+├── Makefile           (untuk Linux/macOS dengan make command)
+├── README.md          (dokumentasi)
+├── LAPORAN.md         (laporan proyek)
+└── KOMPILASI.txt      (file ini)
+
+================================================================================
+CATATAN PENTING
+================================================================================
+
+1. Pastikan semua file .cpp dan .h dikompilasi bersama (tidak ada yang tertinggal)
+
+2. Gunakan flag -std=c++11 atau lebih tinggi saat kompilasi
+
+3. Jika ada warning saat kompilasi, biasanya tidak masalah untuk eksekusi
+   (warning ≠ error)
+
+4. Setiap kali ada perubahan di file .cpp atau .h, harus dikompilasi ulang
+
+5. File executable yang dihasilkan bisa dipindahkan ke folder lain, tapi
+   pastikan input.txt juga dipindahkan jika ingin menggunakan fitur load data
+
+================================================================================
+INFORMASI KONTAK
+================================================================================
+
+Nama: Rozan Gangsar Adibrata
+NIM: 23/521626/TK/57547
+Universitas: Universitas Gadjah Mada
+Departemen: Teknik Elektro dan Teknologi Informasi
+
+================================================================================
